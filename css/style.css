@@ -1,80 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'DM Sans', sans-serif;
     background-image: url(../img/stretched-1920-1080-1315841.jpeg);
+    background-repeat: no-repeat;
+    
+    background-position: fixed;
 }
-nav{
+
+nav {
     display: flex;
     position: fixed;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 100px;
-    
+
 }
 
-.enlaces a{
+.enlaces a {
     text-decoration: none;
     color: aliceblue;
     padding: 0 30px 0 20px;
 }
-.logo h1{
+
+.logo h1 {
     color: aliceblue;
     padding: 0 0 0 20px;
 }
-.icono{
+
+.icono {
+ 
+    display: none;
+
+}
+.barra {
+    width: 45%;
+    height: 100vh;
+    background: #adaaaa5e;
     position: absolute;
     right: 0;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    border-radius: 10px;
+    clip-path: inset(0 0 1% 100%);
+    transition: ease all 0.5s;
+    backdrop-filter: blur(10px);
+}
+.barra a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 50px 0 0 0;
+}
+
+.barra.open {
+    clip-path: inset(0 0 1% 0);
    
 }
-.barra{
-    width: 30%;
-    height: 400px;
-    background-color: none  ;
-    display: flex;
-    position: absolute;
-    right: 0;
-    display: none;
+#cambiodecolor{
+    color: rgb(255, 255, 255);
+}
+#cambiodecolor.open{
+    color: rgb(180, 180, 180);
 }
 
-@media (max-width:800px){
 
-    .enlaces a{
+
+
+@media (max-width:800px) {
+
+    .enlaces a {
         display: none;
 
     }
     .barra{
-       display: block;
-       
-
-    }
-    .barra{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: #adaaaae0;
-        opacity: 1;
-        border-radius: 10px;
-        clip-path: circle(0% at 91% 10%);
-        transition: ease all 0.5s;
+    }
+    .icono {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 3rem;
+        z-index: 1;
+        
+    }
+    
 
-    }
-    .barra a{
-        color: aliceblue;
-        text-decoration: none;
-    }
-    .barra.open{
-        clip-path: circle(150% at 91% 10%);
-    }
+    
+
+    
+
 
 }
